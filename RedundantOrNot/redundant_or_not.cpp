@@ -1,49 +1,49 @@
 /*
  * @author: Hakan CERAN
  * @date: 06.08.2022
- * @content: Reduant or not
+ * @content: Redundant or not
  *
  **/
 
-#include <stdio.h>
-#include <stdbool.h>
+#include <iostream>
 #include <conio.h>
-#include <locale.h>
+#include <clocale>
 #include <windows.h>
+
+using namespace std;
 
 int main(){
 	setlocale(LC_ALL, "turkish");
 	system("color f9");
 	
-	int i, j;
 	int n, temp, sayac = 0;
 	bool number_check = false;
 
 	// Oluþturulacak dizi kaç elemanlý olsun?
-	scanf("%d", &n);
+	cin >> n;
 
 	//	Dizinin oluþturulmasý.
 	int array[n];
 
 	// Diziye elemanlarýn girilmesi.
-	for (i = 0; i < n; i++){
+	for (int i = 0; i < n; i++){
 
-		scanf("%d", &temp);
+		cin >> temp;
 		
 		// Girilen eleman daha önce eklendi mi eklenmedi mi?
-		for (j = 0; j < sayac; j++){
+		for (int j = 0; j < sayac; j++){
 			if (array[j] == temp){
 				number_check = true;
 			}
 		}
 		
 		if (number_check == true){
-			printf("Gereksiz!\n");
+			cout << "Gereksiz!" << endl;
 			number_check = false;
 		} else {
 			array[sayac] = temp;
 			sayac += 1;
-			printf("Sayý diziye eklendi!\n");
+			cout << "Sayý diziye eklendi!" << endl;
 		}
 	}
 	
